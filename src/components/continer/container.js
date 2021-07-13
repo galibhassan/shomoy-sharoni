@@ -15,12 +15,10 @@ const Container = (props) => {
 
   const renderTasks = () => {
     return tasks.map((task, i) => {
-      const { startingTime, endingTime, title, taskDate } = task;
+      const { startingTime, endingTime, title, date: taskDate } = task;
       return (
         <Task
-          taskDate={taskDate}
-          startingTime={startingTime}
-          endingTime={endingTime}
+          task={task}
           title={title}
           containerHeight={containerHeight}
           containerWidth={containerWidth}

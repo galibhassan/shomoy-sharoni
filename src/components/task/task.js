@@ -1,29 +1,23 @@
 import React, { useState } from "react";
 import styles from "./task.module.css";
-import { BIG_BANG, BIG_CRUNCH } from "../../constants";
+import { BIG_BANG, BIG_CRUNCH, BIG_BANG_YEAR } from "../../constants";
 import { getTaskDivHeightWidthTop } from "../../utils/taskUtils";
 
 const Task = (props) => {
-  const {
-    startingTime,
-    endingTime,
-    title,
-    containerHeight,
-    containerWidth,
-    viewType,
-  } = props;
-  const { taskHeight, taskWidth, taskPositionTop } = getTaskDivHeightWidthTop({
-    startingTime,
-    endingTime,
-    containerHeight,
-    containerWidth,
-    viewType,
-    BIG_BANG,
-    BIG_CRUNCH,
-  });
+  const { task, title, containerHeight, containerWidth, viewType } = props;
+  const { taskHeight, taskWidth, taskPositionTop, taskPositionLeft } =
+    getTaskDivHeightWidthTop({
+      task,
+      containerHeight,
+      containerWidth,
+      viewType,
+      BIG_BANG,
+      BIG_CRUNCH,
+      BIG_BANG_YEAR,
+    });
 
   const handleClick = (event) => {
-    alert(title);
+    alert(JSON.stringify(task, null, 2));
   };
 
   return (
@@ -34,9 +28,15 @@ const Task = (props) => {
         height: taskHeight,
         width: taskWidth,
         top: taskPositionTop,
-        left: "50px",
+        left: taskPositionLeft,
+        color: "white",
+        fontSize: "10px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
       }}
-    ></div>
+    >
+    </div>
   );
 };
 

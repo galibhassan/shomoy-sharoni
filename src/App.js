@@ -4,7 +4,7 @@ import { Container } from "./components/continer/container";
 
 const schedule = [
   {
-    title: "Read Harry Potter",
+    title: "Harry Potter",
     date: { year: 2021, month: 1, day: 1 },
     startingTime: "19:00",
     endingTime: "20:00",
@@ -24,6 +24,30 @@ const schedule = [
   {
     title: "Eat Mango",
     date: { year: 2021, month: 1, day: 4 },
+    startingTime: "17:00",
+    endingTime: "18:00",
+  },
+  {
+    title: "Driving",
+    date: { year: 2021, month: 1, day: 5 },
+    startingTime: "19:00",
+    endingTime: "20:00",
+  },
+  {
+    title: "Sleep",
+    date: { year: 2021, month: 1, day: 6 },
+    startingTime: "10:00",
+    endingTime: "20 :00",
+  },
+  {
+    title: "Drink Coffee",
+    date: { year: 2021, month: 1, day: 7 },
+    startingTime: "14:00",
+    endingTime: "15:30",
+  },
+  {
+    title: "Eat Mango",
+    date: { year: 2021, month: 1, day: 8 },
     startingTime: "17:00",
     endingTime: "18:00",
   },
