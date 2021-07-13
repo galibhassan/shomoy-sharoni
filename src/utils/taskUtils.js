@@ -10,18 +10,49 @@ const getAbsMinute = (timeStr, bigbang) => {
   return absMinute;
 };
 
+export const getAbsDays = (task, BIG_BANG_YEAR) => {
+  const { year, month, day } = task.date;
+  const daysInMonths = [
+    31,
+    year % 4 === 0 ? 29 : 28,
+    31,
+    30,
+    31,
+    30,
+    31,
+    31,
+    30,
+    31,
+    30,
+    31,
+  ];
+  let yearsToDays = 0;
+  for (let i = 0; i < year - BIG_BANG_YEAR; i++) {
+    yearsToDays += (BIG_BANG_YEAR + i) % 4 === 0 ? 366 : 365;
+  }
+
+  let monthToDays = 0;
+  for (let i = 0; i < month - 1; i++) {
+    monthToDays += daysInMonths[i];
+  }
+
+  const output = yearsToDays + monthToDays + day;
+  return output;
+};
+
 export const getTaskDivHeightWidthTop = ({
-  startingTime,
-  endingTime,
+  task,
   containerHeight,
   containerWidth,
   viewType,
   BIG_BANG,
   BIG_CRUNCH,
+  BIG_BANG_YEAR,
 }) => {
   const workdayDuration = getAbsMinute(BIG_CRUNCH, BIG_BANG);
   const taskDuration =
-    getAbsMinute(endingTime, BIG_BANG) - getAbsMinute(startingTime, BIG_BANG);
+    getAbsMinute(task.endingTime, BIG_BANG) -
+    getAbsMinute(task.startingTime, BIG_BANG);
   const scaleVert = containerHeight / workdayDuration;
   const daysInMonth = 30;
   const daysInYear = 365;
@@ -45,8 +76,12 @@ export const getTaskDivHeightWidthTop = ({
   const taskHeight = parseInt(taskDuration * scaleVert);
   const taskWidth = parseInt(scaleHoriz);
   const taskPositionTop = parseInt(
-    getAbsMinute(startingTime, BIG_BANG) * scaleVert
+    getAbsMinute(task.startingTime, BIG_BANG) * scaleVert
   );
 
-  return { taskHeight, taskWidth, taskPositionTop };
+  const taskPositionLeft = parseInt(
+    getAbsDays(task, BIG_BANG_YEAR) * scaleHoriz - scaleHoriz
+  );
+
+  return { taskHeight, taskWidth, taskPositionTop, taskPositionLeft };
 };
