@@ -10,19 +10,19 @@ const schedule = [
     endingTime: '20:00'
   },
   {
-    title: 'Read Harry Potter',
+    title: 'Sleep',
     date: { year: 2021, month: 1, day: 1 },
     startingTime: '10:00',
     endingTime: '12:00'
   },
   {
-    title: 'Read Harry Potter',
+    title: 'Drink Coffee',
     date: { year: 2021, month: 1, day: 1 },
     startingTime: '14:00',
     endingTime: '15:30'
   },
   {
-    title: 'Read Harry Potter',
+    title: 'Eat Mango',
     date: { year: 2021, month: 1, day: 1 },
     startingTime: '17:00',
     endingTime: '18:00'

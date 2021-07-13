@@ -17,12 +17,18 @@ const Task = (props) => {
     BIG_CRUNCH
   })
 
+  const handleClick = (event) => {
+    alert(title)
+  }
+
   return (
-    <div className={styles.task} style={{
-      height: taskHeight,
-      width: taskWidth,
-      top: taskPositionTop
-    }}>
+    <div className={styles.task}
+      onClick={handleClick}
+      style={{
+        height: taskHeight,
+        width: taskWidth,
+        top: taskPositionTop
+      }}>
 
     </div>
   )
