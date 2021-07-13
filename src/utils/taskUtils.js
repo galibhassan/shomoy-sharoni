@@ -16,9 +16,14 @@ export const getTaskDivHeightWidthTop = ({ startingTime, endingTime, containerHe
   const scaleVert = containerHeight / workdayDuration
   const daysInMonth = 30
   const daysInYear = 365
+  const daysInWeek = 7
   let scaleHoriz
-  if(viewType==='week') scaleHoriz = containerWidth / 7
+  if(viewType==='week') scaleHoriz = containerWidth / daysInWeek
+  else if (viewType==='twoWeeks') scaleHoriz = containerWidth / (daysInWeek*2)
+  else if (viewType==='threeWeeks') scaleHoriz = containerWidth / (daysInWeek*3)
   else if (viewType==='month') scaleHoriz = containerWidth / daysInMonth
+  else if (viewType==='twoMonths') scaleHoriz = containerWidth / (daysInMonth*2)
+  else if (viewType==='threeMonths') scaleHoriz = containerWidth / (daysInMonth*3)
   else if (viewType==='year') scaleHoriz = containerWidth / daysInYear
   else scaleHoriz = containerWidth / 15
 

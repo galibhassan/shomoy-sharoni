@@ -1,18 +1,24 @@
 import { useState } from 'react'
+import { Dropdown } from '../dropdown/dropdown'
 import { Task } from '../task/task'
 import styles from './container.module.css'
 
 const Container = (props) => {
-  const [viewType, setViewType] = useState('monthh')
+  const [viewType, setViewType] = useState('month')
   const { schedule: tasks } = props
   const containerHeight = 300
   const containerWidth = 600
 
+  const onViewTypeChange = (changedViewType)=>{
+    setViewType(changedViewType)
+  }
+
   const renderTasks = () => {
     return tasks.map((task, i) => {
-      const { startingTime, endingTime, title } = task
+      const { startingTime, endingTime, title, taskDate} = task
       return (
         <Task
+          taskDate={taskDate}
           startingTime={startingTime}
           endingTime={endingTime}
           title={title}
@@ -30,6 +36,9 @@ const Container = (props) => {
       height: containerHeight,
       width: containerWidth
     }}>
+      <Dropdown
+        onViewTypeChange={onViewTypeChange}
+      />
       {renderTasks()}
     </div>
   )
