@@ -11,19 +11,19 @@ const schedule = [
   },
   {
     title: 'Sleep',
-    date: { year: 2021, month: 1, day: 1 },
+    date: { year: 2021, month: 1, day: 2 },
     startingTime: '10:00',
     endingTime: '12:00'
   },
   {
     title: 'Drink Coffee',
-    date: { year: 2021, month: 1, day: 1 },
+    date: { year: 2021, month: 1, day: 3 },
     startingTime: '14:00',
     endingTime: '15:30'
   },
   {
     title: 'Eat Mango',
-    date: { year: 2021, month: 1, day: 1 },
+    date: { year: 2021, month: 1, day: 4 },
     startingTime: '17:00',
     endingTime: '18:00'
   },

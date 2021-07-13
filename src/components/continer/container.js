@@ -7,7 +7,7 @@ const Container = (props) => {
   const [viewType, setViewType] = useState('week')
   const { schedule: tasks } = props
   const containerHeight = 200
-  const containerWidth = 900
+  const containerWidth = 600
 
   const onViewTypeChange = (changedViewType)=>{
     setViewType(changedViewType)
