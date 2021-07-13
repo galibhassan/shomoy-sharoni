@@ -76,7 +76,7 @@ export const getTaskDivHeightWidthTop = ({
   const taskHeight = parseInt(taskDuration * scaleVert);
   const taskWidth = parseInt(scaleHoriz);
   const taskPositionTop = parseInt(
-    getAbsMinute(task.startingTime, BIG_BANG) * scaleVert
+    containerHeight - getAbsMinute(task.endingTime, BIG_BANG) * scaleVert
   );
 
   const taskPositionLeft = parseInt(
