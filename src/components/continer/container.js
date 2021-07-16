@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { DateMarker } from "../dateMarker/dateMarker";
 import { Dropdown } from "../dropdown/dropdown";
 import { Task } from "../task/task";
 import styles from "./container.module.css";
@@ -7,9 +8,8 @@ const Container = (props) => {
   const [viewType, setViewType] = useState("week");
   const { schedule: tasks } = props;
 
-
-  const containerHeight = parseInt(window.innerHeight/1)-100;
-  const containerWidth = parseInt(window.innerWidth/1);
+  const containerHeight = parseInt(window.innerHeight / 1) - 100;
+  const containerWidth = parseInt(window.innerWidth / 1);
 
   const onViewTypeChange = (changedViewType) => {
     setViewType(changedViewType);
@@ -41,6 +41,11 @@ const Container = (props) => {
     >
       <Dropdown onViewTypeChange={onViewTypeChange} />
       {renderTasks()}
+      <DateMarker
+        positionTop={containerHeight-20}
+        viewType={viewType}
+        containerWidth={containerWidth}
+      />
     </div>
   );
 };
