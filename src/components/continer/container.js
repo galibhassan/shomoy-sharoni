@@ -6,8 +6,10 @@ import styles from "./container.module.css";
 const Container = (props) => {
   const [viewType, setViewType] = useState("week");
   const { schedule: tasks } = props;
-  const containerHeight = 200;
-  const containerWidth = 600;
+
+
+  const containerHeight = parseInt(window.innerHeight/1)-100;
+  const containerWidth = parseInt(window.innerWidth/1);
 
   const onViewTypeChange = (changedViewType) => {
     setViewType(changedViewType);
