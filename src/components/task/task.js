@@ -4,7 +4,7 @@ import { BIG_BANG, BIG_CRUNCH, BIG_BANG_YEAR } from "../../constants";
 import { getTaskDivHeightWidthTop } from "../../utils/taskUtils";
 
 const Task = (props) => {
-  const { task, title, containerHeight, containerWidth, viewType } = props;
+  const { task, title, containerHeight, containerWidth, viewType, data } = props;
   const { taskHeight, taskWidth, taskPositionTop, taskPositionLeft } =
     getTaskDivHeightWidthTop({
       task,
@@ -36,6 +36,7 @@ const Task = (props) => {
         justifyContent: "center",
       }}
     >
+      {data.absDays}
     </div>
   );
 };
