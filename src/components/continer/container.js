@@ -17,7 +17,7 @@ const Container = (props) => {
 
   const renderTasks = () => {
     return tasks.map((task, i) => {
-      const { startingTime, endingTime, title, date: taskDate } = task;
+      const {title} = task;
       return (
         <Task
           task={task}

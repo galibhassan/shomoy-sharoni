@@ -1,4 +1,3 @@
-import { Container } from '../continer/container';
 import styles from './dateMarker.module.css'
 
 export const DateMarker = (props) => {
@@ -16,7 +15,8 @@ export const DateMarker = (props) => {
     const divs = []
     for (let i=0; i<divCount; i++) {
       divs.push(
-        <div 
+        <div
+          key={i}
           style={{
             width:containerWidth/divCount,
             backgroundColor: 'skyblue',

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./task.module.css";
 import { BIG_BANG, BIG_CRUNCH, BIG_BANG_YEAR } from "../../constants";
 import { getTaskDivHeightWidthTop } from "../../utils/taskUtils";

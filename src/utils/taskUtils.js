@@ -71,8 +71,6 @@ export const getTaskDivHeightWidthTop = ({
   else if (viewType === "year") scaleHoriz = containerWidth / daysInYear;
   else scaleHoriz = containerWidth / 15;
 
-  console.log({ viewType, containerWidth, scaleHoriz });
-
   const taskHeight = parseInt(taskDuration * scaleVert);
   const taskWidth = parseInt(scaleHoriz);
   const taskPositionTop = parseInt(
