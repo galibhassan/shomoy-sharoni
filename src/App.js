@@ -2,56 +2,7 @@ import React from "react";
 import { Task } from "./components/task/task";
 import { Container } from "./components/continer/container";
 
-const schedule = [
-  {
-    title: "Harry Potter",
-    date: { year: 2021, month: 1, day: 1 },
-    startingTime: "19:00",
-    endingTime: "20:00",
-  },
-  {
-    title: "Sleep",
-    date: { year: 2021, month: 1, day: 2 },
-    startingTime: "10:00",
-    endingTime: "12:00",
-  },
-  {
-    title: "Drink Coffee",
-    date: { year: 2021, month: 1, day: 3 },
-    startingTime: "14:00",
-    endingTime: "15:30",
-  },
-  {
-    title: "Eat Mango",
-    date: { year: 2021, month: 1, day: 4 },
-    startingTime: "17:00",
-    endingTime: "18:00",
-  },
-  {
-    title: "Driving",
-    date: { year: 2021, month: 1, day: 5 },
-    startingTime: "19:00",
-    endingTime: "20:00",
-  },
-  {
-    title: "Sleep",
-    date: { year: 2021, month: 1, day: 6 },
-    startingTime: "10:00",
-    endingTime: "20 :00",
-  },
-  {
-    title: "Drink Coffee",
-    date: { year: 2021, month: 1, day: 7 },
-    startingTime: "14:00",
-    endingTime: "15:30",
-  },
-  {
-    title: "Eat Mango",
-    date: { year: 2021, month: 1, day: 8 },
-    startingTime: "17:00",
-    endingTime: "18:00",
-  },
-];
+const schedule = [{"title": "task", "date": {"year": 2021, "month": 1, "day": 12}, "startingTime": "11:12", "endingTime": "13:30"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 12}, "startingTime": "16:24", "endingTime": "17:22"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 22}, "startingTime": "9:52", "endingTime": "10:29"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 22}, "startingTime": "11:15", "endingTime": "12:44"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 22}, "startingTime": "13:53", "endingTime": "14:18"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 22}, "startingTime": "17:39", "endingTime": "18:24"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 5}, "startingTime": "11:52", "endingTime": "12:15"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 5}, "startingTime": "15:35", "endingTime": "16:6"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 5}, "startingTime": "18:7", "endingTime": "19:40"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 23}, "startingTime": "16:49", "endingTime": "19:0"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 21}, "startingTime": "9:41", "endingTime": "10:48"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 21}, "startingTime": "11:15", "endingTime": "18:7"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 6}, "startingTime": "12:54", "endingTime": "13:50"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 24}, "startingTime": "10:35", "endingTime": "13:37"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 24}, "startingTime": "16:27", "endingTime": "19:49"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 16}, "startingTime": "10:23", "endingTime": "11:16"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 16}, "startingTime": "14:47", "endingTime": "16:1"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 16}, "startingTime": "18:44", "endingTime": "19:12"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 2}, "startingTime": "10:37", "endingTime": "16:45"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 27}, "startingTime": "9:33", "endingTime": "13:41"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 27}, "startingTime": "14:13", "endingTime": "16:14"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 1}, "startingTime": "9:8", "endingTime": "10:43"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 1}, "startingTime": "12:38", "endingTime": "15:14"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 1}, "startingTime": "16:57", "endingTime": "18:2"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 11}, "startingTime": "13:27", "endingTime": "15:41"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 15}, "startingTime": "11:54", "endingTime": "14:34"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 15}, "startingTime": "15:7", "endingTime": "16:25"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 15}, "startingTime": "17:9", "endingTime": "19:46"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 18}, "startingTime": "18:27", "endingTime": "19:52"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 25}, "startingTime": "10:58", "endingTime": "14:7"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 25}, "startingTime": "15:11", "endingTime": "17:53"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 20}, "startingTime": "13:25", "endingTime": "15:0"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 17}, "startingTime": "9:18", "endingTime": "10:50"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 17}, "startingTime": "12:56", "endingTime": "13:44"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 17}, "startingTime": "14:42", "endingTime": "15:2"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 17}, "startingTime": "17:28", "endingTime": "19:5"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 8}, "startingTime": "11:30", "endingTime": "12:0"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 8}, "startingTime": "13:13", "endingTime": "14:26"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 8}, "startingTime": "15:15", "endingTime": "16:33"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 8}, "startingTime": "18:42", "endingTime": "19:4"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 7}, "startingTime": "15:42", "endingTime": "19:57"}, {"title": "task", "date": {"year": 2021, "month": 1, "day": 3}, "startingTime": "15:16", "endingTime": "17:3"}]
 
 const App = () => {
   return <Container schedule={schedule} />;
