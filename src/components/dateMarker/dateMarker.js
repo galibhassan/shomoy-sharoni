@@ -1,4 +1,6 @@
 import styles from './dateMarker.module.css'
+import { BIG_BANG_DAY_WEEK } from '../../constants'
+import { getDayInWeek } from '../../utils/getDayInWeek'
 
 export const DateMarker = (props) => {
   const {viewType, positionTop, containerWidth, horizSegmentCount} = props
@@ -19,11 +21,17 @@ export const DateMarker = (props) => {
           key={i}
           style={{
             width:containerWidth/divCount,
-            backgroundColor: 'skyblue',
-            boxShadow: "1px 1px 10px 1px rgba(0,0,0,0.3)"
+            height: 30,
+            backgroundColor: 'rgba(0,0,0,.8)',
+            color: 'white',
+            fontSize:11,
+            boxShadow: "1px 1px 10px 1px rgba(0,0,0,0.3)",
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
           }}
         >
-          Horiz {i+1}
+          {getDayInWeek(i, BIG_BANG_DAY_WEEK)}
         </div>
       )
     }

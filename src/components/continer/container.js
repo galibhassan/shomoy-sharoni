@@ -54,7 +54,7 @@ const Container = (props) => {
       <Dropdown onViewTypeChange={onViewTypeChange} />
       {renderTasks()}
       <DateMarker
-        positionTop={containerHeight - 20}
+        positionTop={containerHeight}
         viewType={viewType}
         horizSegmentCount={horizSegmentCount}
         containerWidth={containerWidth}
