@@ -21,6 +21,18 @@ def getTimeStamps(nTask):
 
 tasks = []
 days = random.sample(range(1, 28), 20)
+colors = [
+    "#33364c",
+    "#c51162",
+    "#ff4350",
+    "#ff4350",
+    "#01acc2",
+    "#81deea",
+    "#ffd78c",
+    "#ff959d",
+    "#f06292",
+    "#727689"
+]
 
 for day in days:
     nTaskMin = 1
@@ -33,6 +45,7 @@ for day in days:
             "date": {"year": 2021, "month": 1, "day": day},
             "startingTime": timeStamps[i][0],
             "endingTime": timeStamps[i+1][0],
+            "color": colors[np.random.randint(0, len(colors))]
         })
 
 

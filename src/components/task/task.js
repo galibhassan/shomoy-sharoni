@@ -30,6 +30,7 @@ const Task = (props) => {
         top: taskPositionTop,
         left: taskPositionLeft,
         color: "white",
+        backgroundColor: task.color,
         fontSize: "10px",
         display: "flex",
         alignItems: "center",
