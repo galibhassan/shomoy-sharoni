@@ -5,18 +5,10 @@ import { getAbsDays } from "../../utils/taskUtils";
 import { BIG_BANG_YEAR } from "../../constants";
 
 const Container = (props) => {
-  const { schedule: tasks } = props;
+  const { tasks, containerHeight, containerWidth } = props;
 
-  const absDaysOfTasks = tasks.map((task) => {
-    const absDays = getAbsDays(task, BIG_BANG_YEAR);
-    return absDays;
-  });
-  const maxDayCount = Math.max(...absDaysOfTasks);
-  const minDayCount = Math.min(...absDaysOfTasks);
-  const horizSegmentCount = maxDayCount - minDayCount + 1;
-
-  const containerHeight = parseInt(window.innerHeight / 1) - 100;
-  const containerWidth = parseInt(window.innerWidth / 1);
+  const dateMarkerHeight = 50
+  const OFFSET = 9
 
   const renderTasks = () => {
     return tasks.map((task, i) => {
@@ -26,7 +18,7 @@ const Container = (props) => {
         <Task
           task={task}
           title={title}
-          containerHeight={containerHeight}
+          containerHeight={containerHeight - dateMarkerHeight-OFFSET}
           containerWidth={containerWidth}
           key={i}
           data={{ absDays }}
@@ -34,6 +26,8 @@ const Container = (props) => {
       );
     });
   };
+
+
 
   return (
     <div
@@ -45,9 +39,10 @@ const Container = (props) => {
     >
       {renderTasks()}
       <DateMarker
-        positionTop={containerHeight}
-        horizSegmentCount={horizSegmentCount}
+        positionTop={containerHeight-dateMarkerHeight-OFFSET}
         containerWidth={containerWidth}
+        tasks={tasks}
+        height={dateMarkerHeight}
       />
     </div>
   );
