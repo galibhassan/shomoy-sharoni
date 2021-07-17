@@ -39,7 +39,7 @@ const Task = (props) => {
         justifyContent: "center",
       }}
     >
-      {data.absDays}
+      {/* {data.absDays} */}
     </div>
   );
 };
