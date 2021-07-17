@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./task.module.css";
 import { BIG_BANG, BIG_CRUNCH, BIG_BANG_YEAR } from "../../constants";
 import { getTaskDivHeightWidthTop } from "../../utils/taskUtils";
+import { ViewTypeContext } from "../context/viewTypeContext";
 
 const Task = (props) => {
-  const { task, title, containerHeight, containerWidth, viewType, data } = props;
+  const ctx = useContext(ViewTypeContext);
+  const { task, title, containerHeight, containerWidth, data } = props;
   const { taskHeight, taskWidth, taskPositionTop, taskPositionLeft } =
     getTaskDivHeightWidthTop({
       task,
       containerHeight,
       containerWidth,
-      viewType,
+      viewType: ctx.viewType,
       BIG_BANG,
       BIG_CRUNCH,
       BIG_BANG_YEAR,

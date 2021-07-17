@@ -1,13 +1,10 @@
-import { useState } from "react";
 import { DateMarker } from "../dateMarker/dateMarker";
-import { Dropdown } from "../dropdown/dropdown";
 import { Task } from "../task/task";
 import styles from "./container.module.css";
 import { getAbsDays } from "../../utils/taskUtils";
 import { BIG_BANG_YEAR } from "../../constants";
 
 const Container = (props) => {
-  const [viewType, setViewType] = useState("week");
   const { schedule: tasks } = props;
 
   const absDaysOfTasks = tasks.map((task) => {
@@ -21,10 +18,6 @@ const Container = (props) => {
   const containerHeight = parseInt(window.innerHeight / 1) - 100;
   const containerWidth = parseInt(window.innerWidth / 1);
 
-  const onViewTypeChange = (changedViewType) => {
-    setViewType(changedViewType);
-  };
-
   const renderTasks = () => {
     return tasks.map((task, i) => {
       const { title } = task;
@@ -35,7 +28,6 @@ const Container = (props) => {
           title={title}
           containerHeight={containerHeight}
           containerWidth={containerWidth}
-          viewType={viewType}
           key={i}
           data={{ absDays }}
         />
@@ -51,11 +43,9 @@ const Container = (props) => {
         width: containerWidth,
       }}
     >
-      <Dropdown onViewTypeChange={onViewTypeChange} />
       {renderTasks()}
       <DateMarker
         positionTop={containerHeight}
-        viewType={viewType}
         horizSegmentCount={horizSegmentCount}
         containerWidth={containerWidth}
       />

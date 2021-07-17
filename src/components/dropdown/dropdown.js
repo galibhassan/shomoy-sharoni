@@ -1,14 +1,13 @@
+import { useContext } from "react";
+import { ViewTypeContext } from "../context/viewTypeContext";
+
 const Dropdown = (props) => {
+  const ctx = useContext(ViewTypeContext);
   const handleOnChange = (event) => {
-    props.onViewTypeChange(event.target.value);
+    ctx.setViewType(event.target.value);
   };
   return (
-    <div
-      style={{
-        position: "absolute",
-        top: -50,
-      }}
-    >
+    <div>
       <div> View type: </div>
       <select onChange={handleOnChange}>
         <option value="week">Week</option>
