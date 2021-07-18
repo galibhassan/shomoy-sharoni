@@ -34,6 +34,15 @@ colors = [
     "#727689"
 ]
 
+statuses = [
+    "Upcoming",
+    "InProgress",
+    "Done",
+    "Pending",
+    "Failed",
+    "Cancelled",
+]
+
 for day in days:
     nTaskMin = 1
     nTaskMax = 5
@@ -45,7 +54,8 @@ for day in days:
             "date": {"year": 2021, "month": 1, "day": day},
             "startingTime": timeStamps[i][0],
             "endingTime": timeStamps[i+1][0],
-            "color": colors[np.random.randint(0, len(colors))]
+            "color": colors[np.random.randint(0, len(colors))],
+            "status": statuses[np.random.randint(0, len(statuses))]
         })
 
 
