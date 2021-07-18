@@ -3,6 +3,7 @@ import { getMonthFromNumber } from "../../utils/getMonthFromNumber";
 import { getDayInWeek } from "../../utils/getDayInWeek";
 import { getAbsDays } from "../../utils/taskUtils";
 import { BIG_BANG_YEAR } from "../../constants";
+import tinycolor from "tinycolor2";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faEdit } from "@fortawesome/free-solid-svg-icons";
@@ -13,10 +14,24 @@ export const TaskDetail = (props) => {
   const { title, startingTime, endingTime, color: taskColor } = props;
   const { day: dayNum, month, year } = props.date;
 
+  const getColors = (taskColor) => {
+    const lum = tinycolor(taskColor).getLuminance();
+    let rectColor;
+    if (lum > 0.5) rectColor = tinycolor(taskColor).darken().darken();
+    else rectColor = tinycolor(taskColor).brighten().brighten();
+
+    return {
+      rectColor: rectColor.toString(),
+      timeTextColor: rectColor.complement().toString(),
+    };
+  };
+
+  console.log(getColors(taskColor));
+
   const getStatusIndicatorColor = (status) => {
     switch (status) {
       case "Upcoming":
-        return "blue";
+        return "#1ba8f0"; //blue
       case "InProgress":
         return "orange";
       case "Done":
@@ -42,10 +57,20 @@ export const TaskDetail = (props) => {
   const monthString = getMonthFromNumber(month);
   return (
     <div className={styles.taskDetails} style={{ backgroundColor: taskColor }}>
-      <div className={styles.rectangle}>
-        <div className={styles.year}>{year}</div>
+      <div
+        className={styles.rectangle}
+        style={{
+          backgroundColor: getColors(taskColor).rectColor,
+        }}
+      >
+        <div className={styles.year} style={{ color: taskColor }}>
+          {year}
+        </div>
       </div>
-      <div className={styles.dateContainer}>
+      <div
+        className={styles.dateContainer}
+        style={{ color: getColors(taskColor).rectColor }}
+      >
         <div className={styles.monthAndDay}>
           {monthString} {dayNum}
         </div>
@@ -54,12 +79,24 @@ export const TaskDetail = (props) => {
 
       <div className={styles.title}>{title}</div>
       <div className={styles.timeContainer}>
-        <FontAwesomeIcon
-          icon={faClock}
-          size="md"
-          color={getStatusIndicatorColor(props.status)}
-        />
-        <span className={styles.time}>
+        <div
+          className={styles.clockContainer}
+          style={{
+            backgroundColor: taskColor,
+          }}
+        >
+          <FontAwesomeIcon
+            icon={faClock}
+            size="md"
+            color={getStatusIndicatorColor(props.status)}
+          />
+        </div>
+        <span
+          className={styles.time}
+          style={{
+            color: getColors(taskColor).timeTextColor,
+          }}
+        >
           {startingTime} - {endingTime}
         </span>
       </div>
@@ -68,7 +105,7 @@ export const TaskDetail = (props) => {
           icon={faEdit}
           size="2x"
           opacity={0.9}
-          color="#FF4350"
+          color={taskColor}
         />
         <div className={styles.statusContainer}>
           <div
