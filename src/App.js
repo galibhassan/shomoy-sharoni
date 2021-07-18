@@ -1,7 +1,8 @@
 import React from "react";
 import styles from './App.module.css'
-import { Container } from "./components/continer/container";
+import { SelectedTaskContextProvider } from "./components/context/selectedTaskContext";
 import { ViewTypeContextProvider } from "./components/context/viewTypeContext";
+import { Container } from "./components/continer/container";
 import { Dropdown } from "./components/dropdown/dropdown";
 import { SideBar } from "./components/sidebar/sidebar";
 
@@ -17,15 +18,17 @@ const SIDEBAR_WIDTH = parseInt(window.innerWidth*.25)
 
 const App = () => {
   return <ViewTypeContextProvider>
-    <div className={styles.app}>
-      <SideBar/>
-      <Dropdown/>
-      <Container
-        tasks={tasks}
-        containerHeight={CONTAINER_HEIGHT}
-        containerWidth={CONTAINER_WIDTH}
-        />
-    </div>
+    <SelectedTaskContextProvider>
+      <div className={styles.app}>
+        <SideBar/>
+        <Dropdown/>
+        <Container
+          tasks={tasks}
+          containerHeight={CONTAINER_HEIGHT}
+          containerWidth={CONTAINER_WIDTH}
+          />
+      </div>
+    </SelectedTaskContextProvider>
   </ViewTypeContextProvider>
 };
 
