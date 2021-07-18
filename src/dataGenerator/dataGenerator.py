@@ -2,6 +2,8 @@ import json
 import random
 import numpy as np
 from numpy.core.numeric import NaN
+from random_word import RandomWords
+randWord = RandomWords()
 
 
 def getTimeStamps(nTask):
@@ -49,8 +51,10 @@ for day in days:
     nTask = np.random.randint(nTaskMin, nTaskMax)
     timeStamps = getTimeStamps(nTask)
     for i in range(0, 2*nTask, 2):
+        word1 = randWord.get_random_word(hasDictionaryDef=True, includePartOfSpeech="verb")
+        word2 = randWord.get_random_word(hasDictionaryDef=True, includePartOfSpeech="nown")
         tasks.append({
-            "title": "task",
+            "title": f'{word1} {word2}',
             "date": {"year": 2021, "month": 1, "day": day},
             "startingTime": timeStamps[i][0],
             "endingTime": timeStamps[i+1][0],
