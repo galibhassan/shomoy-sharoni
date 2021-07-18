@@ -18,13 +18,13 @@ export const SelectedTaskContextProvider = (props) => {
   const [selectedTask, setSelectedTask] = useState(DEFAULT_SELECTED_TASK);
 
   return (
-    <SelectedTaskContext.provider
+    <SelectedTaskContext.Provider
       value={{
         selectedTask: selectedTask,
         setSelectedTask: setSelectedTask,
       }}
     >
       {props.children}
-    </SelectedTaskContext.provider>
+    </SelectedTaskContext.Provider>
   );
 };
