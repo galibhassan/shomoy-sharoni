@@ -5,7 +5,7 @@ export default {
   title: "Busy Tomorrows/TaskDetail",
   component: TaskDetail,
   argTypes: {
-    backgroundColor: { control: "color" },
+    color: { control: "color" },
   },
 };
 
