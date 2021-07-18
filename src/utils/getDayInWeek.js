@@ -1,5 +1,5 @@
-export const getDayInWeek = (absDays, startingWeekDay) => {
-  switch (Math.abs(absDays + startingWeekDay) % 7) {
+export const getDayInWeek = (absDays, startingWeekDay_bigbang) => {
+  switch (Math.abs(absDays + startingWeekDay_bigbang) % 7) {
     case 0:
       return "Sat";
     case 1:
