@@ -3,9 +3,12 @@ import styles from "./task.module.css";
 import { BIG_BANG, BIG_CRUNCH, BIG_BANG_YEAR } from "../../constants";
 import { getTaskDivHeightWidthTop } from "../../utils/taskUtils";
 import { ViewTypeContext } from "../context/viewTypeContext";
+import {SelectedTaskContext} from "../context/selectedTaskContext"
 
 const Task = (props) => {
   const ctx = useContext(ViewTypeContext);
+  const selectedTaskCTX = useContext(SelectedTaskContext)
+
   const { task, title, containerHeight, containerWidth, data } = props;
   const { taskHeight, taskWidth, taskPositionTop, taskPositionLeft } =
     getTaskDivHeightWidthTop({
@@ -19,7 +22,7 @@ const Task = (props) => {
     });
 
   const handleClick = (event) => {
-    alert(JSON.stringify(task, null, 2));
+    selectedTaskCTX.setSelectedTask(task)
   };
 
   return (
