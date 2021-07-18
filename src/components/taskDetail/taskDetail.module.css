@@ -22,7 +22,12 @@
   left: 0;
   z-index: 0;
 }
-
+.year {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: 24px;
+  color: #ff4350;
+}
 .dateContainer {
   width: 70%;
   /* background-color: rgb(160, 179, 142); */

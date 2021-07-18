@@ -42,7 +42,9 @@ export const TaskDetail = (props) => {
   const monthString = getMonthFromNumber(month);
   return (
     <div className={styles.taskDetails} style={{ backgroundColor: taskColor }}>
-      <div className={styles.rectangle}></div>
+      <div className={styles.rectangle}>
+        <div className={styles.year}>{year}</div>
+      </div>
       <div className={styles.dateContainer}>
         <div className={styles.monthAndDay}>
           {monthString} {dayNum}
