@@ -5,4 +5,9 @@
   background-color: rgb(21, 121, 179);
   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.3);
   border-radius: 2px;
+  cursor: pointer;
+}
+.task:hover{
+  /* border: 6px solid rgba(0, 0, 255, 0.301); */
+  box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.432);
 }
