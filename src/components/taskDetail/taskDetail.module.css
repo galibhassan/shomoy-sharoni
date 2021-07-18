@@ -11,9 +11,11 @@
   align-items: center;
   border-radius: 10px;
   overflow: hidden;
+  transition: all .5s;
 }
 
 .rectangle {
+  transition: all .7s;
   background-color: #632c2f;
   position: absolute;
   width: 35%;
@@ -37,13 +39,11 @@
   z-index: 10;
 }
 .monthAndDay {
-  color: #9e363d;
   font-size: x-large;
   z-index: 10;
 }
 
 .dayInWeek {
-  color: #86282f;
   font-size: small;
   z-index: 10;
 }
@@ -67,6 +67,16 @@
   color: #d3d3d3;
   z-index: 10;
 }
+
+.clockContainer{
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+
 .footer {
   /* background-color: darkred; */
   width: 70%;
