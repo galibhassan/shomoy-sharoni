@@ -11,11 +11,11 @@
   align-items: center;
   border-radius: 10px;
   overflow: hidden;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 .rectangle {
-  transition: all .7s;
+  transition: all 0.7s;
   background-color: #632c2f;
   position: absolute;
   width: 35%;
@@ -51,9 +51,9 @@
 .title {
   /* background-color: darkcyan; */
   color: white;
-  font-size: xx-large;
   font-weight: bold;
   width: 70%;
+  height: 30%;
   z-index: 10;
 }
 .timeContainer {
@@ -68,7 +68,7 @@
   z-index: 10;
 }
 
-.clockContainer{
+.clockContainer {
   width: 30px;
   height: 30px;
   display: flex;

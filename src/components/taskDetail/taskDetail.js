@@ -4,6 +4,7 @@ import { getDayInWeek } from "../../utils/getDayInWeek";
 import { getAbsDays } from "../../utils/taskUtils";
 import { BIG_BANG_YEAR } from "../../constants";
 import tinycolor from "tinycolor2";
+import { Textfit } from "react-textfit";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faEdit } from "@fortawesome/free-solid-svg-icons";
@@ -77,7 +78,7 @@ export const TaskDetail = (props) => {
         <div className={styles.dayInWeek}>{dayWeek}day</div>
       </div>
 
-      <div className={styles.title}>{title}</div>
+      <Textfit mode="multi" className={styles.title}>{title}</Textfit>
       <div className={styles.timeContainer}>
         <div
           className={styles.clockContainer}
