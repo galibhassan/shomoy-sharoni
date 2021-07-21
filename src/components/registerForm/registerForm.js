@@ -3,7 +3,7 @@ import { FaFacebook, FaGooglePlus, FaGithub } from "react-icons/fa";
 
 export const RegisterForm = (props) => {
   return (
-    <form className={styles.loginForm}>
+    <form className={styles.registerForm}>
       <div className={styles.decoration}></div>
       <div className={styles.formHeader}>Register</div>
       
@@ -38,7 +38,7 @@ export const RegisterForm = (props) => {
           
         </div>
 
-        <button type="submit" className={styles.loginButton}>
+        <button type="submit" className={styles.registerButton}>
           Register
         </button>
         

@@ -1,4 +1,4 @@
-.loginForm {
+.registerForm {
   width: 30%;
   height: 55%;
   background-color: white;
@@ -44,7 +44,7 @@
   outline: none;
 }
 
-.loginButton {
+.registerButton {
   border: 0px;
   background-color: rgb(27, 118, 223);
   color: white;
@@ -53,34 +53,8 @@
   cursor: pointer;
   transition: 0.2s;
 }
-.loginButton:hover {
+.registerButton:hover {
   background-color: rgb(93, 169, 255);
-}
-
-.socialLogin {
-  /* background-color: rgb(38, 201, 100); */
-  height: 20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.socialLoginHeader {
-  /* background-color: rgb(147, 243, 184); */
-  text-align: center;
-}
-
-.socialIconsContainer {
-  display: flex;
-  justify-content: center;
-}
-.socialIcons {
-  /* background-color: rgb(201, 38, 187); */
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 50%;
-  opacity: 0.7;
 }
 
 .decoration {
