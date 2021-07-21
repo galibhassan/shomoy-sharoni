@@ -6,7 +6,12 @@ export const BackDrop = (props) => {
         style={{
           width: "100vw",
           height: "100vh",
-          backgroundColor: "rgba(0,0,0,0.3)",
+          backgroundColor: "rgba(0,0,0,0.5)",
+          position: "absolute",
+          top:"0px",
+          top:"0px",
+          zIndex: "100"
+      
         }}
       ></div>
     </div>
