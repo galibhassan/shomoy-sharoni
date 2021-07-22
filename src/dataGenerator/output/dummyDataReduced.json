@@ -1,0 +1,35 @@
+{
+  "projects": [
+    {
+      "name": "shomoy-sharoni-demo",
+      "projectDetails": {
+        "users": [
+          {
+            "firstName": "Default",
+            "lastName": "User",
+            "email:": "akashem.hogwarts.edu",
+            "password": "abcd1234",
+            "tasks": [
+              {
+                "title": "assignees sink-room",
+                "date": { "year": 2021, "month": 1, "day": 26 },
+                "startingTime": "10:42",
+                "endingTime": "13:48",
+                "color": "#33364c",
+                "status": "InProgress"
+              },
+              {
+                "title": "unrighteous granpappy",
+                "date": { "year": 2021, "month": 1, "day": 26 },
+                "startingTime": "14:25",
+                "endingTime": "16:38",
+                "color": "#81deea",
+                "status": "Pending"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
