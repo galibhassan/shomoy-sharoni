@@ -1,5 +1,4 @@
 import styles from "./registerForm.module.css";
-import { FaFacebook, FaGooglePlus, FaGithub } from "react-icons/fa";
 
 export const RegisterForm = (props) => {
   return (
