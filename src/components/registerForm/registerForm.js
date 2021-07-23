@@ -1,5 +1,8 @@
 import styles from "./registerForm.module.css";
 import { useState, useEffect } from "react";
+import { firebaseConfig } from "../../appConfig";
+
+const API_KEY = firebaseConfig.apiKey;
 
 export const RegisterForm = (props) => {
   const [registerData, setRegisterData] = useState({});
@@ -18,10 +21,36 @@ export const RegisterForm = (props) => {
     });
   };
 
+  const registerUser = async () => {
+    const response = await fetch(
+      `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${API_KEY}`,
+      {
+        method: "POST",
+        body: JSON.stringify({
+          email: registerData.email,
+          password: registerData.password,
+          returnSecureToken: true,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    ).catch((err) => {
+      console.log(err);
+    });
+    const responseData = await response.json().catch((err) => {
+      console.log(err);
+    });
+    console.log(responseData);
+    
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(registerData);
+
     // Here, post request should be sent
+    registerUser();
   };
 
   return (
